@@ -6,7 +6,9 @@ except OSError as error:
     pass
 
 import math
+count = -1
 for i in range(((11968 - 16) // 8) - 10):
+    count = count + 1
     oldOffset = int.from_bytes(file[(16 + (i * 8)):(20 + (i * 8))], "little")
     newOffset = int.from_bytes(file[(24 + (i * 8)):(28 + (i * 8))], "little")
     
@@ -22,8 +24,9 @@ for i in range(((11968 - 16) // 8) - 10):
     
     if (oldOffset != newOffset):
         try:
-            new = open("mobjFiles/" + str(i).zfill(4) + "_" + str(math.floor(i / 4)) + extension, "wb")
+            new = open("mobjFiles/" + str(i).zfill(4) + "_" + str(math.floor(count / 4)) + extension, "wb")
         except ValueError as error:
-            new = open("mobjFiles/" + str(i).zfill(4) + "_" + str(math.floor(i / 4)) + ".NCL", "wb")
+            count = count - 1
+            new = open("mobjFiles/" + str(i).zfill(4) + ".NCL", "wb")
         new.write(file[oldOffset:newOffset])
     
