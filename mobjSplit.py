@@ -23,10 +23,14 @@ for i in range(((11968 - 16) // 8) - 10):
     
     
     if (oldOffset != newOffset):
-        try:
-            new = open("mobjFiles/" + str(i).zfill(4) + "_" + str(math.floor(count / 4)) + extension, "wb")
-        except ValueError as error:
+        if (i == 817):
             count = count - 1
-            new = open("mobjFiles/" + str(i).zfill(4) + ".NCL", "wb")
+            new = open("mobjFiles/" + str(i).zfill(4) + ".NCLR", "wb")
+        else:
+            try:
+                new = open("mobjFiles/" + str(i).zfill(4) + "_" + str(math.floor(count / 4)) + extension, "wb")
+            except ValueError as error:
+                count = count - 1
+                new = open("mobjFiles/" + str(i).zfill(4) + ".NCL", "wb")
         new.write(file[oldOffset:newOffset])
     
