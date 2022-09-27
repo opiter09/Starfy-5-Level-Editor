@@ -11,7 +11,9 @@ and found out that there are exactly two rooms from 01- to 08- that never made i
 08-04-19. With these we get our 557, and there we go!
 
 To be clear, the useful files in question are 0569.bin through 1145.bin. You can also run number.py to append
-room numbers accordingly, but only do it *after* you decompress everything with batchBatchTwo.py.
+room numbers accordingly, but only do it *after* you decompress everything with batchBatchTwo.py. The
+worlds added on say 01- to 08- to simplify things, but since the layouts should be the same this will affect
+the appropriate later levels.
 
 Looking at any old Number File, the first 16 bytes are a header. If you multiply the first four (as a
 little-endian integer) by the second four, then multiply that by 2 (since everything below seems to be
