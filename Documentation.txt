@@ -6,9 +6,9 @@ split of roominfo.bin.
 
 "That's not right," you say, "roomSplit.py gives you 896 files!" Ah, but Starfy 5 is very, very weird. 
 World 9 and 10 are just 09- and 10-, but Worlds 1-8 use the four normal levels from 11- through 18-, and the
-three secret levels from 01- through 08-. This, combined with 00-, gives us 557 rooms. Now almost all the rooms
-in levels 1 through 4 of 01- through 08- match the used ones, but I seem to remember a couple being different,
-so that would get us to 557.
+three secret levels from 01- through 08-. This, combined with 00-, gives us 555 rooms. I then ran some code
+and found out that there are exactly two rooms from 01- to 08- that never made it over: 01-01-04 and
+08-04-19. With these we get our 557, and there we go!
 
 To be clear, the useful files in question are 0569.bin through 1145.bin. You can also run number.py to append
 _Number and _Null accordingly, but only do it *after* you decompress everything with batchBatchTwo.py.
