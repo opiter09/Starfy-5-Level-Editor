@@ -1,0 +1,14 @@
+If you can't tell, the file of interest is stage/mapoo.bin. Most of its chunks are LZSS-decompressed.
+
+Further, it has been determined that 557 of the chunks in that long 569 to 2074 strech of bin files have a
+non-zero in their fifth byte. This matches up with the fact that there are about 555 rooms, according to my
+split of roominfo.bin.
+
+"That's not right," you say, "roomSplit.py gives you 896 files!" Ah, but Starfy 5 is very, very weird. 
+World 9 and 10 are just 09- and 10-, but Worlds 1-8 use the four normal levels from 11- through 18-, and the
+three secret levels from 01- through 08-. This, combined with 00-, gives us 557 rooms. Now almost all the rooms
+in levels 1 through 4 of 01- through 08- match the used ones, but I seem to remember a couple being different,
+so that would get us to 557.
+
+To be clear, the useful files in question are 0569.bin through 1145.bin. You can also run number.py to append
+_Number and _Null accordingly, but only do it *after* you decompress everything with batchBatchTwo.py.
