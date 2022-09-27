@@ -12,3 +12,9 @@ so that would get us to 557.
 
 To be clear, the useful files in question are 0569.bin through 1145.bin. You can also run number.py to append
 _Number and _Null accordingly, but only do it *after* you decompress everything with batchBatchTwo.py.
+
+Looking at any old Number File, the first 16 bytes are a header. If you multiply the first four (as a
+little-endian integer) by the second four, then multiply that by 2 (since everything below seems to be
+two-byte integers), and then by 3, and then add 16, you always get the file size. That implies that each third
+of the post-header file is a grid for the room, with each presumably being different properties (collision,
+entities, etc.).
