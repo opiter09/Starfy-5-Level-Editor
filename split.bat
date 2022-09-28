@@ -1,2 +1,3 @@
 cd ./
-python mapooReform.py
+python mapooSplit.py
+python batchBatchTwo.py
