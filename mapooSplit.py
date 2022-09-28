@@ -5,8 +5,6 @@ try:
 except OSError as error:
     pass
 
-import math
-
 for i in range(3287):
     oldOffset = int.from_bytes(file[(8 + (i * 8)):(12 + (i * 8))], "little")
     newOffset = int.from_bytes(file[(16 + (i * 8)):(20 + (i * 8))], "little")
