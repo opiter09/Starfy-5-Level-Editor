@@ -10,7 +10,7 @@ three secret levels from 01- through 08-. This, combined with 00-, gives us 555 
 and found out that there are exactly two rooms from 01- to 08- that never made it over: 01-01-04 and
 08-04-19. With these we get our 557, and there we go!
 
-To be clear, the useful files in question are 0569.bin through 1125.bin. Helpfully, the file batchBatchTwo.py
+To be clear, the useful files in question are 0570.bin through 1126.bin. Helpfully, the file batchBatchTwo.py
 will both decompress these files, and append world-level-room designations to their names.
 
 Looking at any of the good files, the first 16 bytes are a header. If you multiply the first four (as a
