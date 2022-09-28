@@ -15,6 +15,7 @@ will both decompress these files, and append world-level-room designations to th
 
 Looking at any of the good files, the first 16 bytes are a header. If you multiply the first four (as a
 little-endian integer) by the second four, then multiply that by 2 (since everything below seems to be
-two-byte integers), and then by 3, and then add 16, you always get the file size. That implies that each third
-of the post-header file is a grid for the room, with each presumably being different properties (collision,
-entities, etc.).
+two-byte integers), and then by the third four, and then add 16, you always get the file size. That implies
+that each 1 / (bytes 8-12) of the post-header file is a grid for the room, with each presumably being
+different properties (collision, entities, etc.), or possibly different layers. This is quickly borne out if
+you have a look at the boundaries between the sections.
