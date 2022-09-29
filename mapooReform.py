@@ -31,7 +31,7 @@ for root, dirs, files in os.walk("./mapooFiles"):
     sortList2 = files
     sortList2.sort()
     for file in sortList2:
-        if (file.startswith("temp_") == False):
+        if (file.startswith("temp_") == False) and (file.endswith(".bak") == False):
             data = open("./mapooFiles/" + file, "rb")
             new.write(data.read())
             data.close()
