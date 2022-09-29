@@ -3,6 +3,14 @@ import glob
 import subprocess
 import shutil
 
+for root, dirs, files in os.walk("./mapooFiles"):
+    sortList = files
+    sortList.sort()
+    for file in sortList:
+        if (file.endswith("].bin") == True):
+            shutil.copy2("./mapooFiles/" + file, "./mapooFiles/temp_" + file)
+            subprocess.run([ "lzss.exe", "-evn", "./mapooFiles/" + file ])
+
 whole = open("mapoo.bin", "rb").read()
 new = open("output_mapoo.bin", "ab")
 new.write(whole[0:16])
@@ -18,20 +26,20 @@ for i in range(3286):
     else:
         new.write(previousOffset.to_bytes(4, "little"))
     new.write(whole[(20 + (i * 8)):(24 + (i * 8))])
-        
-for root, dirs, files in os.walk("./mapooFiles"):
-    sortList = files
-    sortList.sort()
-    for file in sortList:
-        if (file.endswith("].bin") == True):
-            shutil.copy2("./mapooFiles/" + file, "./mapooFiles/temp_" + file)
-            subprocess.run([ "lzss.exe", "-evn", "./mapooFiles/" + file ])
-        new.write(open("./mapooFiles/" + file, "rb").read())
       
 for root, dirs, files in os.walk("./mapooFiles"):
     sortList2 = files
     sortList2.sort()
     for file in sortList2:
+        if (file.startswith("temp_") == False):
+            data = open("./mapooFiles/" + file, "rb")
+            new.write(data.read())
+            data.close()
+
+for root, dirs, files in os.walk("./mapooFiles"):
+    sortList3 = files
+    sortList3.sort()
+    for file in sortList3:
         if (file.endswith("].bin") == True) and (file.startswith("temp_") == False):
             shutil.copy2("./mapooFiles/temp_" + file, "./mapooFiles/" + file)
             os.remove("./mapooFiles/temp_" + file)
