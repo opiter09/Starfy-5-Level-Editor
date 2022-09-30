@@ -6,5 +6,6 @@ for root, dirs, files in os.walk("./roomFiles"):
     sortList = files
     sortList.sort()
     for file in sortList:
-        new.write(open("./roomFiles/" + file, "rb").read())
+        if (file.endswith(".bin") == True):
+            new.write(open("./roomFiles/" + file, "rb").read())
 new.write(old[1267328:])
