@@ -20,6 +20,6 @@ that each 1 / (bytes 8-12) of the post-header file is a grid for the room, with 
 different properties (collision, entities, etc.), or possibly different layers. This is quickly borne out if
 you have a look at the boundaries between the sections.
 
-So far, it seems that just replacing one of these files with another will freeze the game. Work will have to
-be done to determine what the problem is and what else needs to be edited to fix it (I imagine
-roominfo.bin is involved somehow).
+So far, it seems that just replacing one of these files with another from a different world will freeze the
+game, while if you transplant from the same world you get a glitchy mess. Even if you copy over the value
+in mapoo.bin between the two pointers of the subfile, it just makes a *different* glitchy mess.
