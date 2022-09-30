@@ -5,3 +5,7 @@
 *.bin
 test.py
 *.bak
+*.NANR
+*.NCER
+*.NCGR
+*.NCLR
