@@ -25,7 +25,8 @@ game, while if you transplant from the same world you get a glitchy mess. Even i
 in mapoo.bin between the two pointers of the subfile, it just makes a *different* glitchy mess.
 
 I have managed to determine a total of *four* things that need to be transferred over to make this work:
-- the roominfo.bin subfile (use roomSplit.py and roomMerge.py)
+- the roominfo.bin subfile (use roomSplit.py and roomMerge.py). Remember! Level 1-4 use the world after
+  10 (so subtract 10), while levels 5 to 7 use the world before 10!
 - the mapoo.bin subfile
 - the "middle" value at offset 12 + (file# * 8) to 16 + (file# * 8) in mapoo.bin
 - a mysterious fourth thing which controls the location of non-static objects (the player, people you can
