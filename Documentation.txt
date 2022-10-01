@@ -18,8 +18,19 @@ little-endian integer) by the second four, then multiply that by 2 (since everyt
 two-byte integers), and then by the third four, and then add 16, you always get the file size. That implies
 that each 1 / (bytes 8-12) of the post-header file is a grid for the room, with each presumably being
 different properties (collision, entities, etc.), or possibly different layers. This is quickly borne out if
-you have a look at the boundaries between the sections.
+you have a look at the boundaries between the section
 
 So far, it seems that just replacing one of these files with another from a different world will freeze the
 game, while if you transplant from the same world you get a glitchy mess. Even if you copy over the value
 in mapoo.bin between the two pointers of the subfile, it just makes a *different* glitchy mess.
+
+I have managed to determine a total of *four* things that need to be transferred over to make this work:
+- the roominfo.bin subfile (use roomSplit.py and roomMerge.py)
+- the mapoo.bin subfile
+- the "middle" value at offset 12 + (file# * 8) to 16 + (file# * 8)
+- a mysterious fourth thing which controls the location of non-static objects (the player, people you can
+  talk to, etc.)
+
+I also figured out that among the most likely candidate for the fourth thing, the bin files after 1146.bin,
+every single file is in chunks of 40 bytes. You can tell because each file's size is equal to either exactly
+16 + (40 * the first byte), or that with an extra 8 bytes of padding added at the end.
