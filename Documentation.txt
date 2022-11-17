@@ -1,6 +1,6 @@
 If you can't tell, the file of interest is stage/mapoo.bin. Most of its chunks are LZSS-decompressed.
 
-Further, it has been determined that 557 of the chunks in that long 569 to 2074 strech of bin files have a
+Further, it has been determined that 557 of the chunks in that long 571 to 2076 strech of bin files have a
 non-zero in their fifth byte. This matches up with the fact that there are about 555 rooms, according to my
 split of roominfo.bin.
 
@@ -31,3 +31,9 @@ files most likely in order to allow for changing the 3d background, the tileset,
 I also figured out that among the most likely candidates for the object thing, the bin files after 1146.bin,
 every single file is in chunks of 40 bytes. You can tell because each file's size is equal to either exactly
 16 + (40 * the first byte), or that with an extra 8 bytes of padding added at the end.
+
+By the power of memory dumping, I have found that 1795.bin is related to 02-03-08. Now that seems kind of
+late in the order here, unless of course it goes by world-duplication order and not unique level order.
+
+Okay, got it! If you look at the beginning of the roominfo files, 0x0c-0x0D corresponds to the statics
+chunk, and 0x10-0x11 corresponds to the objects chunk.

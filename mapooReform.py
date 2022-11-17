@@ -7,7 +7,7 @@ for root, dirs, files in os.walk("./mapooFiles"):
     sortList = files
     sortList.sort()
     for file in sortList:
-        if (file.endswith("].bin") == True) or ((int(file[0:4]) >= 1147) and (int(file[0:4]) <= 2075)):
+        if (file.endswith("].bin") == True) or ((int(file[0:4]) >= 1148) and (int(file[0:4]) <= 2076)):
             shutil.copy2("./mapooFiles/" + file, "./mapooFiles/temp_" + file)
             subprocess.run([ "lzss.exe", "-evn", "./mapooFiles/" + file ])
 
@@ -41,6 +41,6 @@ for root, dirs, files in os.walk("./mapooFiles"):
     sortList3.sort()
     for file in sortList3:
         if (file.startswith("temp_") == False):
-            if (file.endswith("].bin") == True) or ((int(file[0:4]) >= 1147) and (int(file[0:4]) <= 2075)):
+            if (file.endswith("].bin") == True) or ((int(file[0:4]) >= 1148) and (int(file[0:4]) <= 2076)):
                 shutil.copy2("./mapooFiles/temp_" + file, "./mapooFiles/" + file)
                 os.remove("./mapooFiles/temp_" + file)

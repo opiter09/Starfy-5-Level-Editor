@@ -18,6 +18,6 @@ for i in range(3287):
         extension = ".NCG"
         
     if (oldOffset != newOffset):
-        new = open("mapooFiles/" + str(i).zfill(4) + extension, "wb")
+        new = open("mapooFiles/" + str(i + 1).zfill(4) + extension, "wb")
         new.write(file[oldOffset:newOffset])
     
