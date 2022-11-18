@@ -37,3 +37,6 @@ late in the order here, unless of course it goes by world-duplication order and 
 
 Okay, got it! If you look at the beginning of the roominfo files, 0x0c-0x0D corresponds to the statics
 chunk, and 0x10-0x11 corresponds to the objects chunk.
+
+Also, 0x04 of the roominfo file is what song plays in that room. For example, a value of 0x46 = the world
+10 music. You can actually match this up with the "sequence" files in the sdat if you convert them to MIDIs.
