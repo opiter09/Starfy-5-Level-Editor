@@ -1,0 +1,2 @@
+cd ./
+python roomSplit.py
