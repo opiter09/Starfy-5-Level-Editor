@@ -1,13 +1,18 @@
 I made a little python file to split apart an objects file into its component objects (namely
-objSplit.py). All addresses below are in terms of a single 128-byte section.
+objSplit.py). All addresses below are in terms of a single 40-byte section.
 
 0x01-0x02 is the thing's X value, and 0x02-0x03 is the thing's Y value, in terms of pixels, I think.
 Furthermore, I have conclusively shown that the orign, (0, 0), is in the top left, and then values
 get bigger going right and down.
 
 Furthermore, I did some comparisons with the room size values they give at the beginning of the statics
-chunks. I believe that each unit of X or Y there refers to a 16 pixel x 16 pixel block. Why the coordinates
-for objects are in pure pixel values that are all divisible by 16 instead of block numbers is beyond me.
+chunks. I believe that each unit of X or Y there refers to a 16 pixel x 16 pixel block. I have, however,
+seen a coordinate not divisible by 16 (with an 8 on the end), so that is probably why they don't just do
+block numbers.
 
+0x04-0x05 definitely seems to be the ID of the object. Obviously with so many working out a full table
+withh be hard, but here is what I have so far:
+- 0x02: Door
+- 0x0C: Save Point
 0x0E-0x0F is the room to which a door goes. Note that this is only the room number, since the
 world and level are implied (this is why the switch worlds cheat code works).
