@@ -12,6 +12,7 @@ block numbers.
 
 0x04-0x05 definitely is the ID of the object. Obviously with so many working out a full table
 will be hard, but here is what I have so far:
+- 0x01: Player Starting Position [chunk after pos/ID is all 00's except for a 01 at 0x08 and a 14 at 0x14]
 - 0x02: Normal Door
 - 0x03: Skull Door
 - 0x0B: Saving Clam [chunk after pos/ID is all 00's]
