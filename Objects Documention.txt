@@ -15,11 +15,16 @@ will be hard, but here is what I have so far:
 - 0x01: Player Starting Position [chunk after pos/ID is all 00's except for a 01 at 0x08 and a 14 at 0x14]
 - 0x02: Normal Door
 - 0x03: Skull Door
+- 0x04: Small Pearl [chunk after pos/ID is all 00's]
+- 0x05: Big Pearl [chunk after pos/ID is all 00's]
 - 0x0B: Saving Clam [chunk after pos/ID is all 00's]
 - 0x0C: Invisible Saving Object (you always need this to go with a 0x0B; I'm not sure if its position
   matters but I would put it close to the clam to be safe) [chunk after pos/ID is all 00's]
 - 0x1B: Victory Platform [chunk after pos/ID is all 00's]
 - 0x3C: Skull Door with Purple Flames
+- 0x3D: Blue and White Circular Fish
+- 0x3F: Red Mushroom People
+- 0x40: Red-Eyed Dragonflies [chunk after pos/ID is all 00's]
 - 0x44: Harmless Geysers
 
 0x0E is the room to which a door goes. Note that this is only the room number, since the
