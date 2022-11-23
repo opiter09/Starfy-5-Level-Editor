@@ -22,10 +22,9 @@ will be hard, but here is what I have so far:
   matters but I would put it close to the clam to be safe) [chunk after pos/ID is all 00's]
 - 0x1B: Victory Platform [chunk after pos/ID is all 00's]
 - 0x3C: Skull Door with Purple Flames
-- 0x3D: Blue and White Circular Fish
-- 0x3F: Red Mushroom People
-- 0x40: Red-Eyed Dragonflies [chunk after pos/ID is all 00's]
-- 0x44: Harmless Geysers
+
+starting with ID 0x3D, the objects it represents actually vary from world to world. Fortunately, however,
+it mostly just follows the list in the Toy Collection, so this was easy enough to write up:
 
 0x0E is the room to which a door goes. Note that this is only the room number, since the
 world and level are implied (this is why the switch worlds cheat code works).
